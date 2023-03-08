@@ -82,6 +82,7 @@ void mainloop() {
 			if(iter != sample_maping.end()) {
 				FMOD_CHANNEL *FCh;
 				FMOD_System_PlaySound(fmodSystem, iter->second, NULL, false, &FCh);
+				FMOD_Channel_SetVolume(FCh ,0.5f);
 				channel_maping.insert(pair<HCHANNEL, FMOD_CHANNEL*>(Ch, FCh));
 				if(DETAILOUTPUT) {
 					int x;
